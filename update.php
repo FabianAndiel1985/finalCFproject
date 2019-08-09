@@ -1,0 +1,170 @@
+<?php include 'components/head.php';?>
+
+<body>
+
+  <?php include 'components/header.php';?>
+
+  <?php 
+
+    if ($_GET['id']) {
+       $id = $_GET['id'];
+       // echo $id;
+
+       $sql = "SELECT * FROM courses WHERE id = {$id}";
+
+       $result = $conn->query($sql);
+
+       $data = $result->fetch_assoc();
+
+       $conn->close();
+     }
+
+?>
+
+      <section class="mb-4">
+
+          <div class="row">
+
+              <!--Grid column-->
+              <div class="col-12 mb-md-0 mb-5">
+
+                  <form id="createNewCourseForm" action="update.php"  method="post"> <!-- FORM START -->
+
+
+                      <!--Grid row-->
+                      <div class="row">
+
+                          <!--Grid column-->
+                          <div class="col-12">
+                              <div class="md-form mb-0">
+                                  <input type="text" id="id" name="id" value="<?php echo $data['id'];?>" class="form-control">
+                                  <label for="id" class="">id</label>
+                              </div>
+                          </div>
+                          <!--Grid column-->
+
+                      </div>
+
+                      <!--Grid row-->
+                      <div class="row">
+
+                          <!--Grid column-->
+                          <div class="col-12">
+                              <div class="md-form mb-0">
+                                  <input type="text" id="name" name="name" 
+                                  value="<?php echo $data['name'];?>"
+                                  class="form-control">
+                                  <label for="name" class="">Course name</label>
+                              </div>
+                          </div>
+                          <!--Grid column-->
+
+                      </div>
+
+                      <!--Grid row-->
+                      <div class="row">
+
+                          <!--Grid column-->
+                          <div class="col-12">
+                              <div class="md-form mb-0">
+                                  <input type="text" id="course_category" name="course_category" value="<?php echo $data['category'];?>" class="form-control">
+                                  <label for="course_category" class="">Course category (either Fitness, Martial Art or Chill Out)</label>
+                              </div>
+                          </div>
+                          <!--Grid column-->
+
+                      </div>
+                      <!--Grid row-->
+
+                      <!--Grid row-->
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="md-form mb-0">
+                                  <input type="text" id="course_hours" name="course_hours" value="<?php echo $data['course_hours'];?>" class="form-control">
+                                  <label for="course_hours" class="">course hours</label>
+                              </div>
+                          </div>
+                      </div>
+                      <!--Grid row-->
+
+                      <!--Grid row-->
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="md-form mb-0">
+                                  <input type="text" id="description" name="description" value="<?php echo $data['description'];?>" class="form-control">
+                                  <label for="description" class="">description</label>
+                              </div>
+                          </div>
+                      </div>
+                      <!--Grid row-->
+
+
+                      <!--Grid row-->
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="md-form mb-0">
+                                  <input type="text" id="image_path" name="image_path"  value="<?php echo $data['img'];?>" class="form-control">
+                                  <label for="image_path" class="">image path</label>
+                              </div>
+                          </div>
+                      </div>
+                      <!--Grid row-->
+
+                        <!-- Sign in button -->
+                    <button class="btn btn-info btn-block" type="submit" name="login_button">Add new course</button>
+
+                  </form> <!-- FORM END -->
+
+              </div>
+              <!--Grid column-->
+
+          </div>
+
+      </section>
+      <!--Section: Contact v.2-->
+
+      <?php
+
+  if ($_POST) { 
+
+      $id = $_POST['id'];
+      $name = $_POST['name'];
+      $category = $_POST['course_category'];
+      $course_hours = $_POST['course_hours'];
+      $description = $_POST['description'];
+      $image_path = $_POST['image_path'];
+
+      echo $id;
+
+      $sql = "UPDATE courses SET name = '$name', category = '$category', course_hours = '$course_hours', description ='$description', img = '$image_path' WHERE id = {$id}" ;
+
+      if($conn->query($sql) === TRUE) {
+       echo"hurra";
+        $conn->close();
+        header("Location: main.php");
+     } 
+
+     else {
+          echo "Error while updating record :".$conn->error;
+     }
+    };
+
+      ?>
+
+
+
+  <?php include 'components/footer.php';?>
+
+  <?php include 'components/scripts.php';?>
+   
+
+</body>
+</html>
+
+
+
+ 
+
+
+
+
