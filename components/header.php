@@ -32,9 +32,26 @@
                 <a class="nav-link" href="#">Team</a>
               </li>
 
-               <li class="nav-item">
-                <a class="nav-link" href="businessBro.php">Business</a>
+              <?php
+
+              if ($_SESSION['user_status'] == 'trainer') { ?>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="businessBro.php">Business</a>
+                </li>
+             
+              <?php } ?>
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact_us.php">Contact Us</a>
               </li>
+
+
+
+
+
 
             </ul>
             <!-- Links -->

@@ -2,6 +2,7 @@
 
 
 <body>
+	<?php echo $_SESSION["user_status"]; ?>
 
 	<div class="container">
 
@@ -45,7 +46,15 @@
 
       ?>
 
+      	<br>
+      	<br>
+      	<br>
+
+    	<a class="white-text my-5" href="logout.php?logout"> Logout</a>
+    	
+
 	</div> <!-- Ende Container fluid -->
+
 
 
 	<?php include 'components/footer.php';?>

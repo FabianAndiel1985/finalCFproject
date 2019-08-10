@@ -1,5 +1,17 @@
 <?php include 'components/head.php';?>
 
+<?php 
+// preventing the logged in trainers to get to their login page
+
+if(isset($_SESSION['user_status']) == "trainer"){
+ header("Location: businessBro.php"); 
+};
+
+
+?>
+
+
+
 <body class="">
 
 	<div class="container">
@@ -52,52 +64,7 @@
 
 
 
-	<?php 
-
-
-	 if(isset($_POST['login_button'])) {
-	 			
-				  	$email = $_POST['email'];
-
-				  	$password = $_POST['password'];
-
-				  	// echo $email;
-
-				  	// echo $password;
-
-				  	$login_query= "SELECT * FROM trainers WHERE email ='$email' ";
-
-				  	$retrievedUser = mysqli_query($conn,$login_query);
-
-				  	$retrievedUserArray = mysqli_fetch_assoc($retrievedUser);
-
-				  	// echo $retrievedUserArray['zip'];
-
-				  	$count = mysqli_num_rows($retrievedUser);  
-
-
-
-				  	if ($count == 1 && $retrievedUserArray['password'] == $password) {
-
-				  		// echo "Hello";
-						
-						$_SESSION["system_user"] = "trainer";
-
-						// echo $_SESSION["system_user"];
-
-						header('Location: businessBro.php');
-									
-						exit();
-
-				  	};
-
-
-				  }; /*END of Login button set */
-
-
-
-
-	?>
+	<?php include 'functionalities/trainerLogin-functionality.php';?>
 
 
 	<?php include 'components/scripts.php';?>

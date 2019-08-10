@@ -1,19 +1,11 @@
-.first {
-
-	border-top: none !important;
-}
-
-td, th {
-	color:white;
-}
-
-
 /*all sites*/
 
 body {
 	background-color: black;
 	font-weight: bold;
 }
+
+
 
 
 /*landing page*/
@@ -62,12 +54,27 @@ body {
 			font-size: 40px;
 		}
 
-
-
-
 /*b2b page*/
 
 
 		.list-group-item {
 			background-color: black;
 		}
+
+
+/* details site */
+
+	.first {
+	border-top: none !important;
+	}
+
+	td, th {
+	color:white;
+	}
+
+
+/* contact page */
+
+	section {
+		color:white;
+	}

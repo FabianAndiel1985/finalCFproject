@@ -57,60 +57,8 @@
   </div>
 
 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-       <script type="text/javascript">
-
-        $("#loginForm").submit(function(){
-
-
-          var $form= $("#loginForm");
-          console.log($form);
-
-          var $inputs = $form.find("input");
-
-          var serializedInputs = $form.serialize();
-
-          console.log(serializedInputs);
-
-          request = $.ajax({
-           url: "checkMail.php",
-           type: "post",
-           data: serializedInputs
-          });
-
-           request.done(function (response, textStatus, jqXHR){
-             // Log a message to the console
-              
-              if (response == "OK") {
-                document.getElementById('result').innerHTML = response;
-              }
-
-              else {
-                window.location.href="main.php";
-
-              }
-              
-              });
-
-           request.fail(function (jqXHR, textStatus, errorThrown){
-       // Log the error to the console
-       console.error(
-           "The following error occurred: "+
-           textStatus, errorThrown
-       );
-   });
-
-          // console.log("Has changed");
-
-          // var $emailAddy = $form.find("input, select, button, textarea");
-
-
-        });
-
-       </script>
-
+   
+<?php include 'functionalities/memberLogin_functionality.php';?>
 
 
 <?php include 'components/scripts.php';?>

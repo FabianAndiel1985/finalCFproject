@@ -1,43 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+<?php include 'components/head.php';?>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+<style type="text/css">
+	section {
+		color:white;
+	}
+</style>
 
-	<style type="text/css">
-
-		body {
-			background-color: black;
-		}
-		section {
-			color:white;
-		}
-
-	</style>
-</head>
 <body>
 
 	<div class="container">
 
 		<!--Section: Contact v.2-->
-		<section class="mb-4">
+		<section id="contactSection " class="mb-4">
 
 		    <!--Section heading-->
-		    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+		    <h2 class="h1-responsive font-weight-bold text-center my-4 white-text">Contact us</h2>
 		    <!--Section description-->
-		    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+		    <p class="text-center w-responsive mx-auto mb-5 white-text">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
 		        a matter of hours to help you.</p>
 
 		    <div class="row">
 
 		        <!--Grid column-->
 		        <div class="col-md-9 mb-md-0 mb-5">
+
+		            
 		            <form id="contact-form" name="contact-form" action="contact_us.php" method="POST">
 
 		                <!--Grid row-->
@@ -61,22 +48,22 @@
 		                    </div>
 		                    <!--Grid column-->
 
-		                </div>
-		                <!--Grid row-->
+		                </div> <!--Grid row-->
+		                
 
-		                <!--Grid row-->
-		                <div class="row">
+		                
+		                <div class="row"> <!--Grid row-->
 		                    <div class="col-md-12">
 		                        <div class="md-form mb-0">
 		                            <input type="text" id="subject" name="subject" class="form-control">
 		                            <label for="subject" class="">Subject</label>
 		                        </div>
 		                    </div>
-		                </div>
-		                <!--Grid row-->
+		                </div> <!--Grid row-->
+		                
 
-		                <!--Grid row-->
-		                <div class="row">
+		                
+		                <div class="row"> <!--Grid row-->
 
 		                    <!--Grid column-->
 		                    <div class="col-md-12">
@@ -87,14 +74,13 @@
 		                        </div>
 
 		                    </div>
-		                </div>
-		                <!--Grid row-->
+		                </div> <!--Grid row-->
+		               
+		               <button type="submit" class="btn btn-outline-green waves-effect" name="send_button">send</button> 	
+
 
 		            </form>
 
-		            <div class="text-center text-md-left">
-		                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-		            </div>
 		            <div class="status"></div>
 		        </div>
 		        <!--Grid column-->
@@ -102,7 +88,7 @@
 		        <!--Grid column-->
 		        <div class="col-md-3 text-center">
 		            <ul class="list-unstyled mb-0">
-		                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+		                <li class=""><i class="fas fa-map-marker-alt fa-2x"></i>
 		                    <p> Test Street 4, 1050 Vienna, Austria</p>
 		                </li>
 
@@ -117,7 +103,7 @@
 		        </div>
 		        <!--Grid column-->
 
-		    </div>
+		    </div> <!-- end of general row -->
 
 		</section> <!--Section: Contact v.2-->
 
@@ -125,33 +111,31 @@
 
 
 	<?php
-		if(isset( $_POST['name']))
-		$name = $_POST['name'];
-		if(isset( $_POST['email']))
-		$email = $_POST['email'];
-		if(isset( $_POST['message']))
-		$message = $_POST['message'];
-		if(isset( $_POST['subject']))
-		$subject = $_POST['subject'];
+		if(isset($_POST)) {
+			
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$message = $_POST['message'];
+			$subject = $_POST['subject'];
 
-		$content="From: $name \n Email: $email \n Message: $message";
-		$recipient = "fabian.andiel@yahoo.com";
-		$mailheader = "From: $email \r\n";
-		mail($recipient, $subject, $content, $mailheader) or die("Error!");
-		echo "Email sent!";
+
+			$content="From: $name \n Email: $email \n Message: $message";
+			$recipient = "fabian.andiel@yahoo.com";
+			$mailheader = "From: $email \r\n";
+			mail($recipient, $subject, $content, $mailheader) or die("Error!");
+			echo "Email sent!";
+		}
+
+
+
+		
+		
+		
 	?>
 
 
 
-
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+	<?php include 'components/scripts.php';?>
 	
 
 </body>

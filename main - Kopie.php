@@ -63,17 +63,8 @@
                 <button type='button' class='btn btn-outline-success waves-effect'>update</button>
                 ";
         };
-
-         if ($_SESSION['user_status'] !== "trainer")  { 
-        
-        echo "
-              <a href='enroll.php?id=".$row['id']."'>
-
-                <button type='button' class='btn btn-outline-success waves-effect'>enroll</button>
-                ";
-        };
-
       
+
         echo "
         <a href='details.php?id=".$row['id']."'>
 
@@ -132,7 +123,7 @@
 
                 <button type='button' class='btn btn-outline-success waves-effect'>enroll</button>
                 ";
-        };
+        }
 
         echo "
 

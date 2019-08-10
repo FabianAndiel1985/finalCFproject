@@ -4,24 +4,7 @@
 
   <?php include 'components/header.php';?>
 
-
-    <?php 
-
-      if ($_GET['id']) {
-       $id = $_GET['id'];
-       // echo $id;
-
-       $sql = "SELECT * FROM courses WHERE id = {$id}";
-
-       $result = $conn->query($sql);
-
-       $data = $result->fetch_assoc();
-
-       $conn->close();
-     }; 
-
-  ?>
-
+  <?php include 'functionalities/update_details_fetch_functionality.php';?>
 
   <table class="table">
     <thead>
@@ -52,6 +35,12 @@
     go back
     </button>
   </a>
+
+        <br>
+        <br>
+        <br>
+
+      <a class="white-text my-5" href="logout.php?logout"> Logout</a>
 
 
 
