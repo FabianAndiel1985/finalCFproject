@@ -4,28 +4,7 @@
 
   <?php include 'functionalities/update_details_fetch_functionality.php';?>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <td class="first" scope="row"> Name:  </td>
-        <td class="first"> <?php echo $data['name'];?> </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Category: </th>
-        <td> <?php echo $data['category'];?> </td>
-      </tr>
-      <tr>
-        <th scope="row">Hours:</th>
-        <td><?php echo $data['course_hours'];?></td>
-      </tr>
-      <tr>
-        <th scope="row">Description</th>
-        <td><?php echo $data['description'];?></td>
-      </tr>
-    </tbody>
-  </table>
+  <h1>Really want to enroll in the following course:</h1>
 
 
   <a href="main.php">
@@ -39,6 +18,51 @@
         <br>
 
       <a class="white-text my-5" href="logout.php?logout"> Logout</a>
+
+
+<!-- ______________________________________________________ -->
+
+  <?php 
+    echo "
+      <form class='text-center p-5' method='POST' action='enroll.php?id=".$data['id']."'>
+
+            <button type='submit' class='btn btn-outline-white waves-effect' name='enroll_button'>Log in</button>
+         
+
+        </form>";
+
+  ?>
+
+<!-- ________________________________________________________ -->
+
+      <?php
+
+      if( isset($_POST['enroll_button']) ) {
+
+         $user_id = $_SESSION['user_id'];
+         $course_id = $id;
+         // echo $user_id;
+         // echo $id;
+
+         $conn = new mysqli("localhost" , "root", "", "cr14_fabian_andiel_sportsclub");
+
+         $query= "INSERT INTO enrollment VALUES ($id, '$name', '$course_category', '$course_hours','$description','$image_path')";
+
+
+
+
+
+
+
+          
+
+
+
+
+
+      }
+
+      ?>
 
 
 
