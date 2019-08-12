@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 else {
-	echo "Läuft bei dir";
+	// echo "Läuft bei dir";
 }
 
 ?>

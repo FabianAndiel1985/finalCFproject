@@ -1,15 +1,16 @@
 <?php include 'components/head.php';?>
 
-<?php 
-// preventing the logged in trainers to get to their login page
 
-if(isset($_SESSION['user_status']) == "trainer"){
- header("Location: businessBro.php"); 
-};
+<!-- prevent logged in user from accessing this page -->
 
+<?php
+
+  if(isset($_SESSION['user_status']) != "" )
+  {
+   header("Location: main.php" ); 
+  };
 
 ?>
-
 
 
 <body class="">
@@ -30,7 +31,7 @@ if(isset($_SESSION['user_status']) == "trainer"){
 		  <h5 class="white-text h5 mb-4">Login for trainers</h5>
 
 				<!-- Default form subscription -->
-				<form class="text-center p-5" method="POST" action="trainerLogin.php">
+				<form class="text-center p-5" method="POST" action="trainer_login.php">
 
 				    <div class="md-form mb-0">
                         <input type="text" id="email" name="email" class="form-control">

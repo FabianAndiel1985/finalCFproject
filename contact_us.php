@@ -33,11 +33,22 @@
 		                    <!--Grid column-->
 		                    <div class="col-md-6">
 		                        <div class="md-form mb-0">
-		                            <input type="text" id="name" name="name" class="form-control">
-		                            <label for="name" class="">Your name</label>
+		                            <input type="text" id="firstname" name="firstname" class="form-control">
+		                            <label for="firstname" class="">Your firstname</label>
 		                        </div>
 		                    </div>
 		                    <!--Grid column-->
+
+
+		               <div class="row"> <!--Grid row-->
+		                    <div class="col-md-12">
+		                        <div class="md-form mb-0">
+		                            <input type="text" id="lastname" name="lastname" class="form-control">
+		                            <label for="lastname" class="">Your lastname</label>
+		                        </div>
+		                    </div>
+		                </div> <!--Grid row-->
+
 
 		                    <!--Grid column-->
 		                    <div class="col-md-6">
@@ -49,19 +60,7 @@
 		                    <!--Grid column-->
 
 		                </div> <!--Grid row-->
-		                
-
-		                
-		                <div class="row"> <!--Grid row-->
-		                    <div class="col-md-12">
-		                        <div class="md-form mb-0">
-		                            <input type="text" id="subject" name="subject" class="form-control">
-		                            <label for="subject" class="">Subject</label>
-		                        </div>
-		                    </div>
-		                </div> <!--Grid row-->
-		                
-
+		              
 		                
 		                <div class="row"> <!--Grid row-->
 
@@ -111,26 +110,31 @@
 
 
 	<?php
+
 		if(isset($_POST)) {
-			
-			$name = $_POST['name'];
+
+			$firstname = $_POST['firstname'];
+			$lastname = $_POST['lastname'];
 			$email = $_POST['email'];
 			$message = $_POST['message'];
-			$subject = $_POST['subject'];
+
+			$conn = new mysqli("localhost" , "root", "", "cr14_fabian_andiel_sportsclub");
+
+    		$query= "INSERT INTO admin_messages VALUES (NULL, '$firstname', '$lastname', '$message','$email')";
 
 
-			$content="From: $name \n Email: $email \n Message: $message";
-			$recipient = "fabian.andiel@yahoo.com";
-			$mailheader = "From: $email \r\n";
-			mail($recipient, $subject, $content, $mailheader) or die("Error!");
-			echo "Email sent!";
+		    if ($enteredData = mysqli_query($conn,$query)) {
+
+		    	header('Location: main.php');
+		    	exit();
+			
+			} else {
+		        echo "Error didn't work";
+		    }
+
+
 		}
 
-
-
-		
-		
-		
 	?>
 
 
@@ -140,3 +144,5 @@
 
 </body>
 </html>
+
+<?php  ob_end_flush(); ?>

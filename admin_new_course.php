@@ -5,10 +5,8 @@
   <?php include 'components/header.php';?>
 
 
+        <div class="container">
 
-
-    <!--   <section class="mb-4">
- -->
           <div class="row">
 
               <!--Grid column-->
@@ -20,12 +18,12 @@
                       <div class="row">
 
                           <!--Grid column-->
-                          <div class="col-12">
+                          <!-- <div class="col-12">
                               <div class="md-form mb-0">
                                   <input type="text" id="id" name="id" class="form-control">
                                   <label for="id" class="">id</label>
                               </div>
-                          </div>
+                          </div> -->
                           <!--Grid column-->
 
                       </div>
@@ -93,19 +91,19 @@
                       </div>
                       <!--Grid row-->
 
-                        <!-- Sign in button -->
-                    <button class="btn btn-info btn-block" type="submit" name="login_button">Add new course</button>
+              
+                    <button class="btn btn-outline-success waves-effect" type="submit" name="login_button">Add new course</button>
+
 
                   </form> <!-- FORM END -->
 
               </div>
-              <!--Grid column-->
-
+            
           </div>
 
-   <!--    </section> -->
+        </div>
 
-      <!--Section: Contact v.2-->
+
 
 
   <?php include 'functionalities/new_course_functionality.php';?>

@@ -5,11 +5,14 @@ body {
 	font-weight: bold;
 }
 
+li {
+	list-style: none;
+}
+
 
 
 
 /*landing page*/
-
 
 		#landing_body {
 		  background-image: url('../images/landing_img.jpg');

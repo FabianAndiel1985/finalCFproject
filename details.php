@@ -6,6 +6,8 @@
 
   <?php include 'functionalities/update_details_fetch_functionality.php';?>
 
+  <div class="container">
+
   <table class="table">
     <thead>
       <tr>
@@ -41,6 +43,8 @@
         <br>
 
       <a class="white-text my-5" href="logout.php?logout"> Logout</a>
+
+  </div>
 
 
 

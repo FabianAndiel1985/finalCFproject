@@ -20,39 +20,44 @@
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="admin_new_course.php">Create new course</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Team</a>
-              </li>
-
               <?php
 
-              if ($_SESSION['user_status'] == 'trainer') { ?>
+              if ($_SESSION['user_status'] == 'admin') { ?>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="admin_new_course.php">Create new course</a>
+                </li>
+
+              <?php } ?>
+
+              <?php if ($_SESSION['user_status'] == 'admin' || $_SESSION['user_status'] == 'trainer') { ?>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="trainer_members_display.php">Members in courses</a>
+                </li>
 
                 <li class="nav-item">
                   <a class="nav-link" href="businessBro.php">Business</a>
                 </li>
-             
+
               <?php } ?>
 
+              <?php if ($_SESSION['user_status'] == 'member' || $_SESSION['user_status'] == 'trainer') { ?>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="contact_us.php">Contact Us</a>
+                </li>
+
+              <?php } ?>
+
+              <?php if ($_SESSION['user_status'] == 'admin') { ?>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="admin_messages.php">Messages</a>
+                </li>
+
+              <?php } ?>
               
-
-              <li class="nav-item">
-                <a class="nav-link" href="contact_us.php">Contact Us</a>
-              </li>
-
-
-
-
-
-
             </ul>
             <!-- Links -->
            

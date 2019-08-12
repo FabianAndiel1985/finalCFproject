@@ -61,15 +61,19 @@
               <a href='update.php?id=".$row['id']."'>
 
                 <button type='button' class='btn btn-outline-success waves-effect'>update</button>
+
+              </a>
                 ";
         };
 
-         if ($_SESSION['user_status'] !== "trainer")  { 
+         if ($_SESSION['user_status'] == "member")  { 
         
         echo "
               <a href='enroll.php?id=".$row['id']."'>
 
                 <button type='button' class='btn btn-outline-success waves-effect'>enroll</button>
+
+              </a>
                 ";
         };
 
@@ -125,7 +129,7 @@
                 ";
         };
 
-       if ($_SESSION['user_status'] !== "trainer")  { 
+       if ($_SESSION['user_status'] == "member")  { 
         
         echo "
               <a href='update.php?id=".$row['id']."'>
@@ -178,7 +182,7 @@
       ?>
 
       
-  </section>
+  
 
         <br>
         <br>
@@ -187,6 +191,28 @@
       <a class="white-text my-5" href="logout.php?logout"> Logout</a>
 
 </div> <!-- End of bootstrap container -->
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <script type="text/javascript">
+    $('#dt-basic-checkbox').dataTable({
+
+    columnDefs: [{
+    orderable: false,
+    className: 'select-checkbox',
+    targets: 0
+    }],
+    select: {
+    style: 'os',
+    selector: 'td:first-child'
+    }
+    });
+
+  </script>
 
      
 

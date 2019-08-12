@@ -46,17 +46,17 @@
 
          $conn = new mysqli("localhost" , "root", "", "cr14_fabian_andiel_sportsclub");
 
-         $query= "INSERT INTO enrollment VALUES ($id, '$name', '$course_category', '$course_hours','$description','$image_path')";
+         $query= "INSERT INTO enrollment VALUES (NULL,$course_id, $user_id)";
 
+         if ($enteredData = mysqli_query($conn,$query)) {
 
-
-
-
-
-
-          
-
-
+            header("Location: main.php");
+       
+          } 
+          else
+          {
+              echo "OK";
+          }
 
 
 

@@ -14,7 +14,7 @@
 
 	        <!--Image-->
 	        <div class="view overlay z-depth-1-half">
-	          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" class="img-fluid"
+	          <img src="images/footer1.jpg" class="img-fluid"
 	            alt="">
 	          <a href="">
 	            <div class="mask rgba-white-light"></div>
@@ -29,7 +29,7 @@
 
 	        <!--Image-->
 	        <div class="view overlay z-depth-1-half">
-	          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(78).jpg" class="img-fluid"
+	          <img src="images/footer2.jpg" class="img-fluid"
 	            alt="">
 	          <a href="">
 	            <div class="mask rgba-white-light"></div>
@@ -44,7 +44,7 @@
 
 	        <!--Image-->
 	        <div class="view overlay z-depth-1-half">
-	          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(79).jpg" class="img-fluid"
+	          <img src="images/footer3.jpg" class="img-fluid"
 	            alt="">
 	          <a href="">
 	            <div class="mask rgba-white-light"></div>
@@ -59,7 +59,7 @@
 
 	        <!--Image-->
 	        <div class="view overlay z-depth-1-half">
-	          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(81).jpg" class="img-fluid"
+	          <img src="images/footer4.jpg" class="img-fluid"
 	            alt="">
 	          <a href="">
 	            <div class="mask rgba-white-light"></div>
@@ -74,7 +74,7 @@
 
 	        <!--Image-->
 	        <div class="view overlay z-depth-1-half">
-	          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(82).jpg" class="img-fluid"
+	          <img src="images/footer5.jpg" class="img-fluid"
 	            alt="">
 	          <a href="">
 	            <div class="mask rgba-white-light"></div>
@@ -89,7 +89,7 @@
 
 	        <!--Image-->
 	        <div class="view overlay z-depth-1-half">
-	          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(84).jpg" class="img-fluid"
+	          <img src="images/footer6.jpg" class="img-fluid"
 	            alt="">
 	          <a href="">
 	            <div class="mask rgba-white-light"></div>

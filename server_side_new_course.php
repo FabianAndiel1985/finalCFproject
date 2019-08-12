@@ -1,7 +1,7 @@
 <?php
 
 	
-    $id = isset($_POST['id']) ? $_POST['id'] : null;
+    // $id = NULL;
 
     $name = isset($_POST['name']) ? $_POST['name'] : null;
 
@@ -17,7 +17,7 @@
 
 	$conn = new mysqli("localhost" , "root", "", "cr14_fabian_andiel_sportsclub");
 
-    $query= "INSERT INTO courses VALUES ($id, '$name', '$course_category', '$course_hours','$description','$image_path')";
+    $query= "INSERT INTO courses VALUES (NULL, '$name', '$course_category', '$course_hours','$description','$image_path')";
 
 
     if ($enteredData = mysqli_query($conn,$query)) {

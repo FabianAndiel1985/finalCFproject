@@ -2,7 +2,9 @@
 
 
 <body>
-	<?php echo $_SESSION["user_status"]; ?>
+	
+	<?php include 'components/header.php';?>
+
 
 	<div class="container">
 
