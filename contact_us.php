@@ -1,9 +1,13 @@
 <?php include 'components/head.php';?>
 
+<?php include 'components/header.php';?>
+
 <style type="text/css">
+
 	section {
 		color:white;
 	}
+
 </style>
 
 <body>
@@ -109,34 +113,8 @@
 	</div> <!-- End of BS container -->
 
 
-	<?php
 
-		if(isset($_POST)) {
-
-			$firstname = $_POST['firstname'];
-			$lastname = $_POST['lastname'];
-			$email = $_POST['email'];
-			$message = $_POST['message'];
-
-			$conn = new mysqli("localhost" , "root", "", "cr14_fabian_andiel_sportsclub");
-
-    		$query= "INSERT INTO admin_messages VALUES (NULL, '$firstname', '$lastname', '$message','$email')";
-
-
-		    if ($enteredData = mysqli_query($conn,$query)) {
-
-		    	header('Location: main.php');
-		    	exit();
-			
-			} else {
-		        echo "Error didn't work";
-		    }
-
-
-		}
-
-	?>
-
+	<?php include 'functionalities/send_admin_message_functionality.php';?>
 
 
 	<?php include 'components/scripts.php';?>

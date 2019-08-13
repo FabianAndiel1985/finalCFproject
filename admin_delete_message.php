@@ -4,20 +4,34 @@
 
 	<?php 
 
-	require_once 'dbconnect.php';
-
 	if ($_GET['id']) {
 	   $id = $_GET['id'];
 	   
 	   $sql = "DELETE FROM admin_messages WHERE id = {$id}";
 
 	   if($conn->query($sql) === TRUE) {
-       echo "<p>Successfully deleted!!</p>" ;
-       echo "<a href='admin_messages.php'><button type='button'>Back</button></a>";
+       	echo "
+	   	<div class='container'>
+		   	<div class='card text-center black white-text'>
+			  <div class='card-header'>
+			    Attention
+			  </div>
+			  <div class='card-body'>
+			    <h5 class='card-title'>Deletion sucessful</h5>
+			    <p class='card-text white-text'>You may now resume</p>
+			    <a href='main.php'>
+
+                	<button type='button' class='btn btn-outline-success waves-effect'>go back</button>
+
+              	</a>
+			  </div>
+			</div>
+	   	</div>
+	   	";
 	   } 
 
 	   else {
-	       echo "Error updating record : " . $conn->error;
+	       echo "Error deleting record : " . $conn->error;
 	   }
 
    $conn->close();

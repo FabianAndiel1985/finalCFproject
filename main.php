@@ -126,15 +126,19 @@
               <a href='update.php?id=".$row['id']."'>
 
                 <button type='button' class='btn btn-outline-success waves-effect'>update</button>
+                
+              </a>
                 ";
         };
 
        if ($_SESSION['user_status'] == "member")  { 
         
         echo "
-              <a href='update.php?id=".$row['id']."'>
+              <a href='enroll.php?id=".$row['id']."'>
 
                 <button type='button' class='btn btn-outline-success waves-effect'>enroll</button>
+
+              </a>
                 ";
         };
 
@@ -166,7 +170,7 @@
     <!-- Grid column -->
 
   </div>
-  <!-- Grid row -->' 
+  <!-- Grid row -->
 
   <hr class='my-5'>
   ";

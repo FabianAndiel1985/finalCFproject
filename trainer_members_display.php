@@ -1,5 +1,6 @@
 <?php include 'components/head.php';?>
 
+
 <body>
 
   <?php include 'components/header.php';?>
@@ -12,20 +13,41 @@
     
       <thead>
         <tr>
-          <th onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(1)')" class="th-sm">Course name
+
+          <th  class="th-sm" >Course name 
+            <span class="ml-2"> 
+              <i onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(1)')" style="cursor:pointer" class="fas fa-sort">
+              </i>
+            </span>
           </th>
-          <th onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(2)')"  class="th-sm">Course category
+
+          <th class="th-sm">Course category 
+            <span class="ml-2"> 
+              <i onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(2)')" style="cursor:pointer" class="fas fa-sort">
+              </i>
+            </span>
           </th>
-          <th onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(3)')"  class="th-sm">Member firstname
+
+          <th class="th-sm">Member firstname 
+            <span class="ml-2"> 
+              <i onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(3)')" style="cursor:pointer" class="fas fa-sort">
+              </i>
+            </span>
           </th>
-          <th onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(4)')" class="th-sm">Member lastname
+
+          <th class="th-sm">Member lastname 
+            <span class="ml-2"> 
+              <i onclick="w3.sortHTML('#myTable', '.item', 'td:nth-child(4)')" style="cursor:pointer" class="fas fa-sort">
+              </i>
+            </span>
           </th>
+
         </tr>
       </thead>
       <tbody>
 
 
-    <?php 
+         <?php 
 
         // echo $_SESSION["system_user"];
 
@@ -61,6 +83,9 @@
               } /* end if clause */
       ?>
 
+
+
+   
         </tbody>
         <tfoot>
           <tr>
@@ -81,18 +106,6 @@
 </div> <!-- End of bootstrap container -->
 
 
-  <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-  <script type="text/javascript">
-    
-    $(document).ready(function () {
-    $('#dtBasicExample').DataTable();
-    $('th').addClass('bs-select');
-    });
-
-  </script>
 
      
 

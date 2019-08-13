@@ -21,6 +21,9 @@
 
         $_SESSION['user_status'] = "member";
         $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_firstname'] = $row['firstname'];
+        $_SESSION['user_lastname'] = $row['lastname'];
+
 
 	
 	} else {
